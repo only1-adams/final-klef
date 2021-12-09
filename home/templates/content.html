@@ -75,7 +75,7 @@
                                     <div>
                                         <small>{{items.category}} / <span class="time">{{items.created_at|naturaltime}}</span></small> <br>
                                         <span class="fw-bold">
-                                            <a href="">
+                                            <a href="{% url 'postdetails' items.id items.slug %}">
                                                 {{items.title1|slice:"100"}}
                                             </a>
                                         </span>
@@ -102,7 +102,7 @@
                                     <div>
                                         <small>{{items.category}} / <span class="time">{{items.created_at|naturaltime}}</span></small> <br>
                                         <span class="fw-bold">
-                                            <a href="">
+                                            <a href="{% url 'postdetails' items.id items.slug %}">
                                                 {{items.title1|slice:"100"}}
                                             </a>
                                         </span>
