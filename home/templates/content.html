@@ -1,0 +1,203 @@
+{% load static %}
+{% load humanize %}
+<div class="row">
+    <div class="col-lg-9">
+        <div class="row mt-3 mb-3 retest bg-black ">
+            <span class="fs-6 text-white fw-bold py-1 head">LATEST POSTS</span>
+        </div>
+        <div class="row mt-1 p-0">
+            <div class="col-lg-12">
+                <div class="row">
+                    
+                    {% if allpost %}
+                        {% for items in allpost  %}
+                            <div class="col-lg-4 mb-3">
+                                <div class="newsnews">
+                                    <img src="{{items.image.url}}" alt="" class="imgfluid">
+                                    <div>
+                                        <small>{{items.category}} / <span class="time">{{items.created_at|naturaltime}}</span></small> <br>
+                                        <span class="fw-bold">
+                                            <a href="{% url 'postdetails' items.id items.slug %}">
+                                                {{items.title1 | slice:"100"}}
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                        
+                </div>
+
+            </div>
+        </div>
+        <div class="row mt-3 mb-3 retest bg-black ">
+            <span class="fs-6 text-white fw-bold py-1 head">SPORTS</span>
+        </div>
+        <div class="row mt-1 p-0">
+            <div class="col-lg-12">
+                <div class="row">
+                    
+                    {% if sports %}
+                        {% for items in sports  %}
+                            <div class="col-lg-4 mb-3">
+                                <div class="newsnews">
+                                    <img src="{{items.image.url}}" alt="" class="imgfluid">
+                                    <div>
+                                        <small>{{items.category}} / <span class="time">{{items.created_at|naturaltime}}</span></small> <br>
+                                        <span class="fw-bold">
+                                            <a href="{% url 'postdetails' items.id items.slug %}">
+                                                {{items.title1 | slice:"100"}}
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                        
+                </div>
+
+            </div>
+        </div>
+        <div class="row mt-3 mb-3 retest bg-black ">
+            <span class="fs-6 text-white fw-bold py-1 head">POLITICS</span>
+        </div>
+        <div class="row mt-1 p-0">
+            <div class="col-lg-12">
+                <div class="row">
+                    
+                    {% if politics %}
+                        {% for items in politics  %}
+                            <div class="col-lg-4 mb-3">
+                                <div class="newsnews">
+                                    <img src="{{items.image.url}}" alt="" class="imgfluid">
+                                    <div>
+                                        <small>{{items.category}} / <span class="time">{{items.created_at|naturaltime}}</span></small> <br>
+                                        <span class="fw-bold">
+                                            <a href="">
+                                                {{items.title1|slice:"100"}}
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                        
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3 mb-3 retest bg-black ">
+            <span class="fs-6 text-white fw-bold py-1 head">FASHION</span>
+        </div>
+        <div class="row mt-1 p-0">
+            <div class="col-lg-12">
+                <div class="row">
+                    {% if fashion %}
+                        {% for items in fashion  %}
+                            <div class="col-lg-4 mb-3">
+                                <div class="newsnews">
+                                    <img src="{{items.image.url}}" alt="" class="imgfluid">
+                                    <div>
+                                        <small>{{items.category}} / <span class="time">{{items.created_at|naturaltime}}</span></small> <br>
+                                        <span class="fw-bold">
+                                            <a href="">
+                                                {{items.title1|slice:"100"}}
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="row mt-3 mb-3 retest bg-black ">
+            <span class="fs-6 text-white fw-bold py-1 text-center head head1">SPONSORED</span>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <img src="images/5d7f5de9bc28d.png" class="img-fluid" alt="">
+            </div>
+        </div>
+        <div class="row mt-3 mb-3 retest bg-black ">
+            <span class="fs-6 text-white fw-bold py-1 text-center head head1">RECENT POST</span>
+        </div>
+        <div class="row">
+            <div class="recent1">
+                
+                {% if allpost2 %}
+                    {% for items in allpost2  %}
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                <img src="{{items.image.url}}" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-8">
+                                <span class="fw-bold recent vf"><a href="{% url 'postdetails' items.id items.slug %}">{{items.title1 | slice:'80'}}</a></span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                    
+                
+            </div>
+        </div>
+        <div class="row mt-3 mb-3 retest bg-black ">
+            <span class="fs-6 text-white fw-bold py-1 text-center head head1">TRENDING GISTS</span>
+        </div>
+        <div class="row fgfg">
+            
+            {% if trends %}
+                {% for items in trends  %}
+                    <span class="fw-bold recent vf"><a href="{% url 'postdetails' items.id items.slug %}">{{items.title1|slice:"100"}}</a></span> <br>
+                    <hr class="trend-area">
+                {% endfor %}
+            {% endif %}
+                
+        </div>
+        <div class="row mt-3 mb-3 retest bg-black ">
+            <span class="fs-6 text-white fw-bold py-1 text-center head head1">BUSINESS</span>
+        </div>
+        <div class="row">
+            <div class="recent1">
+                
+                {% if business %}
+                    {% for items in business %}
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                <img src="images/Sergey-Brian-and-Larry-Page.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-8">
+                                <span class="fw-bold recent vf"><a href="{% url 'postdetails' items.id items.slug %}">{{items.title1|slice:"100"}}</a></span> 
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                    
+            </div>
+        </div>
+        <div class="row mt-3 mb-3 retest bg-black ">
+            <span class="fs-6 text-white fw-bold py-1 text-center head head1">SPONSORED</span>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <img src="images/5d7f5de9bc28d.png" class="img-fluid" alt="">
+            </div>
+        </div>
+        <div class="row mt-3 mb-3 retest bg-black ">
+            <span class="fs-6 text-white fw-bold py-1 text-center head head1">TECHNOLOGY</span>
+        </div>
+        <div class="row fgfg">
+            {% if tech %}
+                {% for items in tech  %}
+                    <span class="fw-bold recent vf"><a href="{% url 'postdetails' items.id items.slug %}">{{items.title1|slice:"100"}}</a></span> <br>
+                    <hr class="trend-area">
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>

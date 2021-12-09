@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block keywords %}Klef9ja, Nigeria's No.1 entertainment and news blog. Download and watch Latest Nigerian Songs and Videos {% endblock keywords %}
+
+{% block description %}Klef9ja is a Music and Entertainment website created bearing Nigerians mind. The website covers latest trending Nigerian Music and also Music from other parts of Africa such as Tanzania, Ghana, South Africa, Kenya and more. Even foreign countries are not left out. Klef9ja combines the best content and distribution capabilities to connect with millions of engaging Nigerians who rely on us for latest Music and Entertainment updates. Right from the onset, Klef9ja has focused on providing highest quality contents on the web — recruiting only the most respected music enthusiast who are very much updated on latest and trending music across Africa. Our audience consistently revisits our site daily in search for latest songs and video downloads, Entertainment and Trending Gists – A Perfect fit for your advertising needs.{% endblock description %} 
+
+
+{% block ogtitle %}klef9ja{% endblock ogtitle %}
+
+{% block ogtype %}website{% endblock ogtype %}
+
+{% block header %}{% include 'header.html' %}{% endblock header %}
+{% block navigation %}{% include 'navigation.html' %}{% endblock navigation %}
+<div class="container-fluid banner-sec">
+    {% block banner %}{% include 'banner.html' %}{% endblock banner %}
+    {% block content %}{% include 'content.html' %}{% endblock content %}
+</div>
+{% block footer %}{% include 'footer.html' %}{% endblock footer %}

@@ -1,0 +1,29 @@
+{% load static %}
+
+{% if queryset.has_other_pages %}
+<div class="pagination justify-content-center mt-4">
+    <ul>
+
+        {% if queryset.has_previous %}
+            <li><a href="?{% if search_query %}search_query={{search_query}}&{% endif %}page={{queryset.previous_page_number}}" class="activer" data-page="{{queryset.previous_page_number}}"> &#10094; Prev</a></li>
+        {% endif %}
+
+        {% for page in custom_range  %}
+            {% if page == queryset.number %}
+                <li><a href="?{% if search_query %}search_query={{search_query}}&{% endif %}page={{page}}" class=" active-page activer" data-page="{{page}}">{{page}}</a></li>
+            {% else %}
+                <li><a href="?{% if search_query %}search_query={{search_query}}&{% endif %}page={{page}}" class="activer" data-page="{{page}}">{{page}}</a></li>
+            {% endif %}
+        {% endfor %}
+        
+        {% if queryset.has_next %}
+            <li><a href="?{% if search_query %}search_query={{search_query}}&{% endif %}page={{queryset.next_page_number}}" class="activer" data-page="{{queryset.next_page_number}}"> Next &#10095;</a></li>
+        {% endif %}
+            
+    </ul>
+</div>
+{% endif %}
+
+
+
+    

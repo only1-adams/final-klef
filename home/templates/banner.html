@@ -1,0 +1,65 @@
+{% load static %}
+<div class="row mt-3">
+    <div class="col-lg-5 bannee">
+        <div class="carousel slide " data-bs-ride="carousel" id="demo">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+            </div>
+            <div class="carousel-inner"> 
+            
+                
+                
+                {% if slide1 %}
+                    {% for items in slide1 %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %} ">
+                            <img src="{{items.image.url}}" alt="" class="img-fluid" width="100%">
+                            <div class="carousel-caption  d-md-block">
+                                <p class="lead shadow"><a href="{% url 'postdetails' items.id items.slug %}">"{{items.title1 | slice:"100"}}"</a></p>
+                            </div>
+                        </div> 
+                    {% endfor %}
+                {% endif %} 
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+    <div class="col-lg-4 rere">
+        
+        {% if frontpage %}
+            {% for items in frontpage  %}
+                <div class="card border-0">
+                    <img src="{{items.image.url}}" alt="" class="card-img-top img-fluid">
+                    <div class="card-body p-0">
+                        <a href="{% url 'postdetails' items.id items.slug %}" class="card-text lead fw-bold news p-0 fs-4">
+                            {{items.title1 | slice:"100"}}
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+            
+    </div>
+    <div class="col-lg-3">
+        <div class="row  mb-3 retest bg-black " id="bottom">
+            <span class="fs-6 text-white fw-bold py-1 text-center head head1">TRENDING SONGS</span>
+        </div>
+        
+        {% if trending %}
+            {% for items in trending  %}
+                <div class="trend">
+                    <span class="fw-bold vf"><a href="{% url 'postdetails' items.id items.slug %}">{{items.title1}}</a></span>
+                </div>
+                <hr class="trend-area">
+            {% endfor %}
+        {% endif %}
+            
+    </div>
+</div>

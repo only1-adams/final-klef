@@ -1,0 +1,43 @@
+{% load static %}
+<div class="container-fluid bg-success navigation " id="top">
+    <ul class="nav mynav justify-content-center frs">
+        
+        {% if category %}
+            {% for items in category  %}
+            <li class="nav-item">
+                <a href="{% url 'catposti' items.id items.slug %}" class="nav-link active" aria-current="page">{{items.title}}</a>
+            </li>
+            {% endfor %}
+        {% endif %}
+        
+            
+    </ul>
+</div>
+<div class="container-fluid fixed-top small-nav">
+    <!-- <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">News</div>
+          <div class="swiper-slide">Music</div>
+          <div class="swiper-slide">Politics</div>
+          <div class="swiper-slide">Fashion</div>
+          <div class="swiper-slide">Sports</div>
+          <div class="swiper-slide">Trending Gists</div>
+          <div class="swiper-slide">Business</div>
+          <div class="swiper-slide">Technology</div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div> -->
+    <div class="swiper mySwiper" >
+        <ul class="swiper-wrapper">
+            
+            {% if category %}
+                {% for items in category  %}
+                    <li class="swiper-slide"><a href="{% url 'catposti' items.id items.slug %}">{{items.title}}</a></li>
+                {% endfor %}
+            {% endif %}
+                
+        </ul>
+    </div>
+</div>

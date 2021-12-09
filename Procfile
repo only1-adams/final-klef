@@ -1,0 +1,1 @@
+web: gunicorn klef9ja.wsgi --log-file -

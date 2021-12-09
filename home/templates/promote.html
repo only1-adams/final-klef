@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+{% block title %}Promote your {% endblock title %}
+
+{% block header %}{% include 'header.html' %}{% endblock header %}
+{% block navigation %}{% include 'navigation.html' %}{% endblock navigation %}
+<div class="container-fluid banner-sec-m">
+    {% block banner %}
+        <div class="container-fluid p-bg" id="bottom">
+            <h5 class="display-6 fw-bold text-center text-white it">Promote your Music and Video with Klef9ja</h5>
+        </div>
+    {% endblock banner %}
+    {% block content %}
+        
+        {% if messages %}
+            {% for message in messages  %}
+                <div {% if message.tags %}class="alert alert-{{message.tags}} alert-dismissible   d-flex align-items-center"{% endif %} role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                    <div>
+                        {{message}}
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+            
+        <div class="container banner-sec-m pbg1">
+            <h3 class="fw-bold  text-success why">WHY YOU SHOULD WORK WITH US</h3>
+            <p class="notepro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia qui sit recusandae fugit alias architecto atque voluptatum dignissimos consequuntur veritatis. Labore officiis voluptatibus optio doloremque omnis rem fuga quae exercitationem soluta nisi ab, vitae reprehenderit dicta a dolores sequi voluptates consequuntur facilis pariatur ipsum sunt est atque? Repellat perferendis laborum temporibus esse ad nihil molestias nulla fuga quas odio, vel excepturi est amet deleniti nostrum recusandae maxime sunt rerum alias illum, facilis iusto, quasi velit atque? Odit, accusamus nostrum ipsam eum corporis recusandae a amet minima, facere officia dicta velit vitae itaque sequi qui blanditiis voluptatum eligendi dolore fugiat explicabo?</p>
+            <h3 class="fw-bold text-center  text-success why">CONTACT US</h3>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card text-center pie">
+                        <i class="bi bi-envelope-check card-img-top"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Send us a Mail
+                            </h5>
+                            <p class="card-text">
+                                Click the button below to send a mail to 
+                            </p>
+                            <a href="mailto:" class="btn sendmail"> Send Mail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card text-center pie">
+                        <i class="bi bi-whatsapp card-img-top"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Send a WhatsApp Message
+                            </h5>
+                            <p class="card-text">
+                                Click the button below to send message 
+                            </p>
+                            <a href="https://wa.me/2348177507780?text=I'm%20interested%20in%20your%20car%20for%20sale" class="btn sendmail">Send Message</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card text-center pie">
+                        <i class="bi bi-card-list card-img-top"></i>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Fill a form
+                            </h5>
+                            <p class="card-text">
+                                Fill form to contact us 
+                            </p>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#contact"  class="btn sendmail">Click here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="contact">
+            <div class="modal-dialog">
+                <div class="modal-content">
+          
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">SEND US A MESSAGE</h4>
+                        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal"></button> -->
+                        <i class="bi bi-x-circle-fill  text-danger fs-2" data-bs-dismiss="modal" aria-label="Close"></i>
+                    </div>
+            
+                    <!-- Modal body -->
+                    <div class="modal-body comment">
+                        <form action="{% url 'promotion' %}" method="POST">
+                        {% csrf_token %}
+                            <label for="" class="fw-bold">Your Name</label> <br>
+                            <input type="text" name="name" id=""> <br>
+                            <label for="" class="fw-bold">Your E-mail</label> <br>
+                            <input type="email" name="email" id=""> <br>
+                            <label for="" class="fw-bold">Your Message</label> <br>
+                            <textarea name="message" id="" cols="30" rows="10"></textarea>
+                            <input type="submit" value="Send Message" class="btny" style="background-color: #299D16;">
+                        </form>
+                    </div>
+            
+                    <!-- Modal footer -->
+                    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div> -->
+          
+                </div>
+            </div>
+        </div>
+    
+    {% endblock content %}
+</div>
+{% block footer %}{% include 'footer.html' %}{% endblock footer %}

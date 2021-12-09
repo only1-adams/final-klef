@@ -1,0 +1,328 @@
+@media only screen and (max-width:768px){
+    .rere{
+        display: none;
+    }
+    .retest{
+        margin-top: 15px;
+    }
+    .head1{
+        width: 30%;
+    }
+    .head{
+        width: 25%;
+    }
+    .newsnews{
+        display: flex;
+    }
+    .newsnews img{
+        height: 90px;
+        width: 100px;
+        margin-right: 10px;
+    }
+    .recent1 img{
+        width: 100%;
+        height: 90px;
+    }
+    .recent1 .row{
+        display: flex;
+    }
+    .small-nav{
+        display: block;
+    }
+    .main-header2{
+        display: grid;
+    }
+    .er2{
+        display: flex;
+        justify-content: end;
+    }
+    .header-main2{
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+    
+    }
+    .swiper-slide{
+        color: white;
+        list-style: none;
+        margin-top: 10px;
+        background-color: #299D16;
+        padding: 0px;
+        width: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+}
+@media only screen and (max-width:414px){
+    .navigation{
+        display: none;
+    }
+    .banner-sec{
+        margin-top: 120px;
+    }
+    .right{
+        display: none;
+    }
+    .left{
+        display: none;
+    }
+    .header-main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+    }
+    iframe{
+        width: 100%;
+        height: 305px;
+    }
+    .left1{
+        display: flex;
+    }
+    .main-header{
+        display: none;
+    }
+    .main-header2{
+        width: 100%;
+      
+        background-color: black;
+        border-bottom: 5px solid #299D16;
+    }
+    .header-main2{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+    }
+    .center img{
+        width: 130px;
+    }
+    .small-nav{
+        margin-top: 63px;
+        background-color: black;
+    }
+    .swiper-slide{
+        color: white;
+        list-style: none;
+        margin-top: 10px;
+        background-color: #299D16;
+        padding: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+    .swiper-slide a{
+        color: white;
+        text-decoration: none;
+    }
+    .swiper-slide a:focus{
+        color: black;
+    }
+    .vf a:hover{
+        color: black;
+    }
+    .swiper-button-next{
+        color: white;
+    }
+    .swiper i{
+        position: absolute;
+        color: white;
+    }
+    .category{
+        display: grid;
+        grid-gap: 4px;
+        width: 50%;
+    }
+    .ca2{
+        background-color: white;
+        padding: 0px;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        display: none;
+    }
+    .creen{
+        display: flex;
+        margin-top: 7px;
+    }
+    .ca1{
+        background-color: black;
+        padding: 5px;
+        border-top-left-radius: 10px;
+        
+    }
+    .ca2 a{
+        color: gray;
+    }
+    .head{
+        width: 50%;
+    }
+    .shadow{
+        text-shadow: 3px 3px black;
+        font-weight: bold;
+        font-size: 17px;
+        outline: 3px solid #299D16;
+        border-radius: 5px;
+        background-color: #299D16;
+    }
+    .recent1 img{
+        width: 100%;
+        height: 90px;
+    }
+    .newsnews{
+        display: flex;
+    }
+    .newsnews img{
+        width: 100px;
+        height: 80px;
+    }
+    .footer{
+        background-color:#299D16;
+        padding-top: 10px;
+        padding-bottom: 1px;
+    }
+    .form{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .form input{
+        outline: none;
+        border: 2px solid #299D16;
+        padding: 10px;
+        width: 100%;
+        border-radius: 50px;
+        font-weight: bold;
+    }
+    
+}
+@media only screen and (max-width:570px){
+    .navigation{
+        display: none;
+    }
+    .banner-sec{
+        margin-top: 120px;
+    }
+    .right{
+        display: none;
+    }
+    .left{
+        display: none;
+    }
+    .header-main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+    }
+    .left1{
+        display: flex;
+    }
+    .main-header{
+        display: none;
+    }
+    .main-header2{
+        width: 100%;
+      
+        background-color: black;
+        border-bottom: 5px solid #299D16;
+    }
+    .header-main2{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+    }
+    .center img{
+        width: 130px;
+    }
+    .small-nav{
+        margin-top: 63px;
+        background-color: black;
+    }
+    .swiper-slide{
+        color: white;
+        list-style: none;
+        margin-top: 10px;
+        background-color: #299D16;
+        padding: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+    .swiper-slide a{
+        color: white;
+        text-decoration: none;
+    }
+    .swiper-button-next{
+        color: white;
+    }
+    .swiper i{
+        position: absolute;
+        color: white;
+    }
+    .head{
+        width: 50%;
+    }
+    .shadow{
+        text-shadow: 3px 3px black;
+        font-weight: bold;
+        font-size: 17px;
+        outline: 3px solid #299D16;
+        border-radius: 5px;
+        background-color: #299D16;
+    }
+    .recent1 img{
+        width: 100%;
+        height: 90px;
+    }
+    .newsnews{
+        display: flex;
+    }
+    .newsnews img{
+        width: 100px;
+        height: 80px;
+    }
+    
+}
+
+@media only screen and (max-width:375px){
+    .bannee{
+        display: none;
+    }
+    .banner-sec{
+        margin-top: 100px;
+    }
+    .swiper-slide{
+        color: white;
+        list-style: none;
+        margin-top: 10px;
+        background-color: #299D16;
+        padding: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        font-size: 13px;
+        border-radius: 10px;
+    }
+    .swiper-slide a{
+        color: white;
+        text-decoration: none;
+    }
+}

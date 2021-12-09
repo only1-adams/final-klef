@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}{{posts.title1 |safe}}{% endblock title %}
+
+{% block header %}{% include 'header.html' %}{% endblock header %}
+{% block navigation %}{% include 'navigation.html' %}{% endblock navigation %}
+    <div class="container-fluid banner-sec">
+        {% block content %}
+        <div class="category" id="bottom">
+            <span class="ca1">
+                <a href="">{{posts.category}}</a>
+            </span>
+            <span class="ca2">
+                <a href="#">Published {{posts.created_at|naturaltime}} by <strong class="text-black">{{posted_by.name}}</strong></a>
+            </span>
+        </div>
+        <div class="row mt-3" id="top1">
+            <div class="col-lg-8" >
+                <span id="bottom1" class="display-6 fw-bold">{{posts.title2 |safe}}</span>
+                <small class="text-secondary creen">Published {{posts.created_at}} by {{posted_by.name}}</small>
+                <div class="row mt-1">
+                    <div class="col-lg-12 justify-content-center ghgh">
+                        <img src="{{posts.image.url}}" alt="{{posts.title1}}" class="img-fluid ">
+                    </div>
+                </div>
+                <div class="row">
+                    <span class="mt-3 fs-5  content">
+                        {{posts.body | safe}}
+                    </span>
+                </div>
+                <div class="row mb-3 mt-3">
+                    
+                    
+                    {% if images %}
+                        {% for items in images  %}
+                            <h5 class="mb-3 fw-bold more">More Images:</h5>
+                            <div class="col-lg-3">
+                                <img src="{{items.image.url}}" alt="{{items.post.title1}}" class="img-fluid mb-2">
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                        
+                </div>
+                <div class="row">
+                    
+                    {% if posts.youtube %}
+                    <div class="col-lg-12 cont">
+                    <iframe  src="{{posts.youtube}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    {% endif %}
+                        
+                    
+                    {% if posts.video %}
+                        <div class="col-lg-12 cont">
+                            <video src="{{posts.video}}" width="100%" controls controlsList="nodownload"></video>
+                            <a href="{{posts.video.url}}" download="" class="download mt-2">Download Video</a>
+                        </div>
+                    {% endif %}
+                        
+                    
+                    {% if posts.Music %}
+                        <div class="col-lg-12 cont">
+                            <audio src="{{posts.Music.url}}" controls controlsList="nodownload" ></audio>
+                            <a href="{{posts.Music.url}}" download="" class="download mt-2">Download Audio</a>
+                        </div>
+                    {% endif %}
+                        
+                </div>
+                
+                {% if posts.comments.all %}
+                    <div class="row mt-3 mb-3 retest bg-black ">
+                        <span class="fs-6 text-white fw-bold py-1 head head4">{{posts.comments.count}} COMMENT{{posts.comments.count|pluralize:"S"}}</span>
+                    </div>
+                    {% for comment in posts.comments.all  %}
+                        <div class="row">
+                            <div class="allcomm">
+                                <strong>{{comment.name| capfirst}} - <span class="text-secondary">{{comment.created_at}}</span></strong> <br>
+                                <span>{{comment.body | safe}}</span> <br>
+                            </div>
+                            <hr class="trend-area mt-2">           
+                        </div>
+                    {% endfor %}
+                    <div class="row">
+                        <p class="fw-bold">Click <a href="" data-bs-toggle="modal" data-bs-target="#myModal">here</a> to add a comment</p>
+                    </div>
+                {% else %}
+                    <div class="row mt-3 mb-3 retest bg-black ">
+                        <span class="fs-6 text-white fw-bold py-1 head head4">NO COMMENTS YET</span>
+                    </div>
+                    <div class="row">
+                        <p class="fw-bold">Click <a href="" data-bs-toggle="modal" data-bs-target="#myModal">here</a> to add a comment</p>
+                    </div>
+                {% endif %}
+                    
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">POST A COMMENT</h4>
+                                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal"></button> -->
+                                <i class="bi bi-x-circle-fill  text-danger fs-2" data-bs-dismiss="modal" aria-label="Close"></i>
+                            </div>
+                    
+                            <!-- Modal body -->
+                            <div class="modal-body comment">
+                                <form  method="POST">
+                                {% csrf_token %}
+                                    <label for="" class="fw-bold">Your Name</label> <br>
+                                    <input type="text" name="name" id="" required> <br>
+                                    <label for="" class="fw-bold">Your Comment</label> <br>
+                                    <textarea name="body" id="" cols="30" rows="10" required></textarea>
+                                    <input type="submit" value="Drop Comment" class="btny" style="background-color: #299D16;">
+                                </form>
+                            </div>
+                    
+                            <!-- Modal footer -->
+                            <!-- <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div> -->
+                
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row comment">
+                    
+                </div>
+            </div>
+            <div class="col-lg-4">
+                
+                {% if related_post %}
+                <div class="row mt-3 mb-3 retest bg-black ">
+                    <span class="fs-6 text-white fw-bold py-1 text-center head head1">RELATED POSTS</span>
+                </div>
+                <div class="row">
+                    <div class="recent1">
+                        {% for post in related_post   %}
+                            <div class="row mb-2">
+                                <div class="col-4">
+                                    <img src="{{post.image.url}}" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-8">
+                                    <span class="fw-bold recent vf"><a href="{% url 'postdetails' post.id post.slug %}">{{post.title1| safe}}</a></span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                
+                
+
+                <div class="row mt-3 mb-3 retest bg-black ">
+                    <span class="fs-6 text-white fw-bold py-1 text-center head head1">SPONSORED</span>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="images/5d7f5de9bc28d.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="row mt-3 mb-3 retest bg-black ">
+                    <span class="fs-6 text-white fw-bold py-1 text-center head head1">TRENDING PLAYLISTS</span>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <iframe src="https://audiomack.com/embed/playlist/meetadams/baddesr?background=1" scrolling="no" class="audiomack" scrollbars="no" frameborder="0"></iframe>
+                    </div>
+                </div>
+                <div class="row mt-3 mb-3 retest bg-black ">
+                    <span class="fs-6 text-white fw-bold py-1 text-center head head1">SPONSORED</span>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="images/5d7f5de9bc28d.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="row mt-3 mb-3 retest bg-black ">
+                    <span class="fs-6 text-white fw-bold py-1 text-center head head1">SPONSORED</span>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="images/5d7f5de9bc28d.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock content %}
+</div>
+{% block footer %}{% include 'footer.html' %}{% endblock footer %}

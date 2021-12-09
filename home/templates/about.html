@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Klef9ja{% endblock title %}
+
+{% block header %}{% include 'header.html' %}{% endblock header %}
+{% block navigation %}{% include 'navigation.html' %}{% endblock navigation %}
+<div class="container-fluid banner-sec">
+    {% block content %}
+        <div class="row">
+                
+            <div class="col-lg-9 ps-4 pe-4">
+                <p class="lead fw-bold text-center display-5 mt-2">About us</p>
+                <span class="fs-5">
+                    Klef9ja is a Music and Entertainment website created bearing Nigerians  mind. The website covers latest trending Nigerian Music and also Music from other parts of Africa such as Tanzania, Ghana, South Africa, Kenya and more. Even foreign countries are not left out. Klef9ja combines the best content and distribution capabilities to connect with millions of engaging Nigerians who rely on us for latest Music and Entertainment updates.
+
+                    Right from the onset, Klef9ja has focused on providing highest quality contents on the web — recruiting only the most respected music enthusiast who are very much updated on latest and trending music across Africa. Our audience consistently revisits our site daily in search for latest songs and video downloads, Entertainment and Trending Gists – A Perfect fit for your advertising needs.
+                </span>
+                <div class="row">
+                    <span class="lead fw-bold text-center fs-3 mt-2 ">About Babatope Samuel</span>
+                    <div class="klef">
+                        <img src="images/image 3.png" alt="" height="150px" width="200px">
+                        <p class="fs-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex facilis, enim consequuntur voluptatum alias voluptate molestiae ab veniam fuga rerum, beatae, dignissimos veritatis aut eaque expedita assumenda. Porro exercitationem voluptas totam? Dolorem nam blanditiis, sint illum omnis distinctio eaque aliquid cupiditate assumenda id voluptates nobis illo ut beatae molestias quas?</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="row mt-3 mb-3 retest bg-black ">
+                    <span class="text-white fw-bold py-2 text-center head1 head12">TRENDING PLAYLISTS</span>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <iframe src="https://audiomack.com/embed/playlist/meetadams/baddesr?background=1" scrolling="no" width="100%" height="700" scrollbars="no" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock content %}
+</div>
