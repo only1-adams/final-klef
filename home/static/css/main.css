@@ -429,6 +429,9 @@ iframe{
 .pie{
     border: none !important;
     outline: none !important;
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }
 .pie i{
     font-size: 70px;
