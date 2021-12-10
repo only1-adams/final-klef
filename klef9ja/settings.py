@@ -133,6 +133,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'home/static')]
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -143,9 +144,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'Adams',
-    'API_KEY': '145227992183136',
-    'API_SECRET': 'kp-HiUmBmuahdtHcKFpmpOZaZRM'
+    'CLOUD_NAME': 'dmrilux6e',
+    'API_KEY': '143149521959611',
+    'API_SECRET': 'DHDcZ5uZMN5Qzbs4bGjQc1uHyKw'
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
