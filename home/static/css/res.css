@@ -254,8 +254,11 @@
         margin-top: 15px !important;
     }
     .why{
-        color: #299D16 !important;
+        color: black !important;
         font-size: 20px !important;
+    }
+    .kiki{
+        color: #299D16 !important;
     }
     .notepro{
         font-size: 18px !important;
