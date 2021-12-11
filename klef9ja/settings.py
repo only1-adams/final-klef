@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,8 +47,8 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'django.contrib.humanize',
     'taggit',
-    # 'cloudinary_storage',
-    # 'cloudinary',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -141,12 +144,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media Folder settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': 'dmrilux6e',
-#     'API_KEY': '143149521959611',
-#     'API_SECRET': 'DHDcZ5uZMN5Qzbs4bGjQc1uHyKw'
-# }
-# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dmrilux6e',
+    'API_KEY': '143149521959611',
+    'API_SECRET': 'DHDcZ5uZMN5Qzbs4bGjQc1uHyKw'
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 #...
 SITE_ID = 1
