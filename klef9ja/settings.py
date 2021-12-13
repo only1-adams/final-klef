@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
+import cloudinary
 
 
 
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'django.contrib.humanize',
     'taggit',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -155,6 +157,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media Folder settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+cloudinary.config( 
+  cloud_name = "dmrilux6e", 
+  api_key = "143149521959611", 
+  api_secret = "DHDcZ5uZMN5Qzbs4bGjQc1uHyKw" 
+)
 
 
 
