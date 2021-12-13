@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 import django_heroku
 import cloudinary
+import cloudinary_storage
+import dj_database_url
 
 
 
@@ -46,11 +48,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
+    'cloudinary_storage',
     'ckeditor',
     'ckeditor_uploader',
     'django.contrib.humanize',
     'taggit',
-    'cloudinary',
+    
 ]
 
 MIDDLEWARE = [
@@ -143,11 +147,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+WHITENOISE_USE_FINDERS = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'home/static')]
 django_heroku.settings(locals())
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -160,8 +167,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 cloudinary.config( 
   cloud_name = "dmrilux6e", 
   api_key = "143149521959611", 
-  api_secret = "DHDcZ5uZMN5Qzbs4bGjQc1uHyKw" 
+  api_secret = "DHDcZ5uZMN5Qzbs4bGjQc1uHyKw",
+  secure = True, 
 )
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 
