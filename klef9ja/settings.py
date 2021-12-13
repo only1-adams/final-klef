@@ -164,12 +164,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media Folder settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
-cloudinary.config( 
-  cloud_name = "dmrilux6e", 
-  api_key = "143149521959611", 
-  api_secret = "DHDcZ5uZMN5Qzbs4bGjQc1uHyKw",
-  secure = True, 
-)
+CLOUDINARY_URL=cloudinary://143149521959611:DHDcZ5uZMN5Qzbs4bGjQc1uHyKw@dmrilux6e
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
