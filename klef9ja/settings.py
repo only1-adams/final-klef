@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
+import cloudinary
 
 
 
@@ -45,11 +46,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'ckeditor',
     'ckeditor_uploader',
     'django.contrib.humanize',
     'taggit',
+    'cloudinary',
     
 ]
 
@@ -160,6 +163,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media Folder settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hafffvluo',
+    'API_KEY': '581611218949757',
+    'API_SECRET': '5amHU1GdcsPRG4SaPbUMAi2qG8I',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 
